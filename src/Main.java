@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class Main {
 
@@ -10,6 +11,14 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        volcanoAnalyzer.displayVolcanoes();
+
+
+
+            volcanoAnalyzer.displayVolcanoesIndex7();
+        volcanoAnalyzer.displayHighestNumberOfDeaths();
+
+        volcanoAnalyzer.displayMudflowPercentage();
+
+
     }
 }
