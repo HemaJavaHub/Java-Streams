@@ -5,10 +5,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Comparator;
-import java.util.NoSuchElementException;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class VolcanoAnalyzer {
 
@@ -74,5 +73,34 @@ public class VolcanoAnalyzer {
 
     //Return the most common type of volcano in the set
 
+    public String displayMostCommonType() {
+
+        List<String> type = volcanoes.stream().map(volcano -> volcano.getType()).collect(Collectors.toList());
+        HashMap<String , Integer> countOccurences = new HashMap<String , Integer>();
+        for(String volcanoType : type) {
+
+            if(countOccurences.get(volcanoType) != null) {
+                int count = countOccurences.get(volcanoType);
+                count++;
+                countOccurences.put(volcanoType , count);
+            }
+            else {
+                countOccurences.put(volcanoType , 1);
+            }
+        }
+
+        String mostCommonType = "";
+        int max = 0;
+        for (Map.Entry<String, Integer> entry : countOccurences.entrySet()) {
+
+            if(entry.getValue() > max) {
+                max = entry.getValue();
+                mostCommonType = entry.getKey();
+            }
+        }
+
+        return mostCommonType;
+
+    }
 
 }

@@ -19,6 +19,6 @@ public class Main {
 
         volcanoAnalyzer.displayMudflowPercentage();
 
-
+    System.out.println(volcanoAnalyzer.displayMostCommonType());
     }
 }
