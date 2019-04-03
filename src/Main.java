@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -22,5 +23,6 @@ public class Main {
     System.out.println(volcanoAnalyzer.displayMostCommonType());
 
         System.out.println("Country total Eruptions for Indonesia  " + volcanoAnalyzer.countryTotalEruptions("Indonesia"));
+        System.out.println( Arrays.toString(volcanoAnalyzer.typesOfVolcanoes()));
     }
 }

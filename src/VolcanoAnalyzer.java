@@ -116,4 +116,15 @@ public class VolcanoAnalyzer {
         return  volcanoes.stream().mapToInt(Volcano::getElevation).summaryStatistics().getAverage();
     }
 
+
+    //Return an array of types of volcanoes.
+
+    public String[] typesOfVolcanoes(){
+
+
+        return volcanoes.stream().map(volcano -> volcano.getType()).distinct().toArray(String[]::new);
+    }
+
+
+
 }
