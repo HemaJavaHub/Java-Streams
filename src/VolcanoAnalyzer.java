@@ -103,4 +103,17 @@ public class VolcanoAnalyzer {
 
     }
 
+    //Return the number of eruptions when supplied a country as an argument
+
+    public int countryTotalEruptions(String countryName) {
+        return  volcanoes.stream().filter(volcano -> volcano.getCountry().equals(countryName)).collect(Collectors.toList()).size();
+    }
+
+
+    //Return the average elevation of all eruptions.
+
+    public double averageElevation() {
+        return  volcanoes.stream().mapToInt(Volcano::getElevation).summaryStatistics().getAverage();
+    }
+
 }
